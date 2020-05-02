@@ -1,0 +1,42 @@
+[
+  {
+    "id": 5,
+    "first_name": "Tiffie",
+    "last_name": "Gierek",
+    "email": "tgierek4@altervista.org",
+    "avatar": "https://robohash.org/perferendisofficiafacilis.png?size=50x50&set=set1",
+    "phone_number": "104-776-0454",
+    "status": "invited",
+    "invited_date": "03/08/2019"
+  },
+  {
+    "id": 6,
+    "first_name": "Logan",
+    "last_name": "Dow",
+    "email": "ldow5@com.com",
+    "avatar": "https://robohash.org/culpaeligendirepellat.png?size=50x50&set=set1",
+    "phone_number": "655-899-7680",
+    "status": "invited",
+    "invited_date": "03/31/2019"
+  },
+  {
+    "id": 7,
+    "first_name": "Fabe",
+    "last_name": "Summerell",
+    "email": "fsummerell6@example.com",
+    "avatar": "https://robohash.org/suscipiteiuseos.png?size=50x50&set=set1",
+    "phone_number": "446-830-2970",
+    "status": "invited",
+    "invited_date": "10/17/2019"
+  },
+  {
+    "id": 8,
+    "first_name": "Melessa",
+    "last_name": "Poundsford",
+    "email": "mpoundsford7@census.gov",
+    "avatar": "https://robohash.org/nobisfugalibero.png?size=50x50&set=set1",
+    "phone_number": "732-379-1118",
+    "status": "invited",
+    "invited_date": "03/05/2020"
+  }
+]

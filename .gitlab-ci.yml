@@ -1,0 +1,43 @@
+image: node:latest
+
+cache:
+  paths:
+    - node_modules/
+
+pages:
+  stage: deploy
+  script:
+    - CI=true yarn run build:dev
+    - rm -rf public
+    - mv build public
+    - cp public/index.html public/404.html
+  artifacts:
+    paths:
+      - public # GitLab pages serve from a 'public' directory
+  only:
+    - dev # run on dev branch
+
+build_prod:
+  stage: build
+  script:
+    - CI=true yarn run build
+  artifacts:
+    paths:
+      - public/
+      - build/
+  only:
+    - master
+
+deploy_prod:
+  before_script:
+    - apt-get update -y
+    - apt-get -y install rsync
+    - mkdir -p ~/.ssh
+    - echo "$ACCESS_KEY" | tr -d '\r' > ~/.ssh/access_key.pem
+    - chmod 700 ~/.ssh/access_key.pem
+    - '[[ -f /.dockerenv ]] && echo -e "Host *\n\tStrictHostKeyChecking no\n\n" > ~/.ssh/config'
+  stage: deploy
+  script:
+    - rsync -rave "ssh -i ~/.ssh/access_key.pem" --delete "./" $AWS_USER@$AWS_IP:/home/$AWS_USER/juror-admin/ --exclude ".git" --exclude "node_modules"
+  only:
+    - master
