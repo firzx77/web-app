@@ -66,7 +66,7 @@ const SettingsLayout = React.lazy(() =>
 );
 
 // const NotFoundPage = () => <div>
-//   Not Found Page Again 2
+//   Not Found
 // </div>
 
 function App() {
